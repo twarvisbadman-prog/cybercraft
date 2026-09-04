@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CYBERCRAFT - Encode</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CYBER<span>CRAFT</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="encode.html" class="active">Encode</a></li>
+                <li><a href="decode.html">Decode</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="card">
+            <h1>🔒 <span class="highlight">Encode</span> Your Data</h1>
+            <p>Select an encoding method, enter your text, and click encode.</p>
+
+            <div style="margin: 1.5rem 0;">
+                <label for="encodeMethod" style="font-weight: 600; color: #00d4ff;">Encoding Method:</label>
+                <select id="encodeMethod" style="
+                    width: 100%;
+                    padding: 0.8rem;
+                    background: rgba(0,0,0,0.4);
+                    border: 1px solid rgba(0,212,255,0.2);
+                    border-radius: 10px;
+                    color: #fff;
+                    font-size: 1rem;
+                    margin-top: 0.5rem;
+                    cursor: pointer;
+                ">
+                    <option value="base64">Base64</option>
+                    <option value="rot13">ROT13</option>
+                    <option value="url">URL Encode</option>
+                    <option value="hex">Text to Hex</option>
+                    <option value="binary">Text to Binary</option>
+                    <option value="caesar">Caesar Cipher</option>
+                </select>
+            </div>
+
+            <div id="caesarShift" style="display: none; margin-bottom: 1rem;">
+                <label for="shiftAmount" style="font-weight: 600; color: #00d4ff;">Shift Amount:</label>
+                <input type="number" id="shiftAmount" value="3" min="1" max="25" style="
+                    width: 100px;
+                    padding: 0.5rem;
+                    background: rgba(0,0,0,0.4);
+                    border: 1px solid rgba(0,212,255,0.2);
+                    border-radius: 10px;
+                    color: #fff;
+                    font-size: 1rem;
+                    margin-top: 0.5rem;
+                " />
+            </div>
+
+            <textarea id="inputText" placeholder="Enter text to encode..."></textarea>
+            
+            <div class="btn-group">
+                <button class="btn btn-primary" onclick="encodeText()">🔐 Encode</button>
+                <button class="btn btn-outline" onclick="clearFields()">🗑️ Clear</button>
+            </div>
+
+            <div>
+                <h3 style="color: #00d4ff; margin-bottom: 0.5rem;">Result:</h3>
+                <div class="result-box" id="result">Your encoded text will appear here...</div>
+                <button class="btn btn-success" onclick="copyResult()" style="margin-top: 0.5rem;">📋 Copy</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            Made with <span class="heart">❤</span> by <strong>TWARVIS</strong>
+            <a href="https://wa.me/255740706007" target="_blank" class="whatsapp-link">
+                <svg viewBox="0 0 24 24"><path d="M12.031 1.969c-5.524 0-10 4.476-10 10 0 1.765.457 3.425 1.254 4.873L1.813 22.16l5.672-1.506c1.38.727 2.951 1.136 4.609 1.136 5.524 0 10-4.476 10-10s-4.476-10-10-10zm0 18.75c-1.624 0-3.128-.434-4.435-1.188l-.319-.188-3.393.9.908-3.285-.203-.332A8.407 8.407 0 0 1 4.031 11.969c0-4.412 3.588-8 8-8s8 3.588 8 8-3.588 8-8 8zm4.649-5.987c-.243-.124-1.437-.71-1.659-.791-.222-.08-.384-.124-.546.124-.162.248-.627.791-.769.953-.142.162-.284.182-.527.058-.243-.124-1.027-.378-1.956-1.204-.724-.644-1.213-1.438-1.354-1.682-.142-.244-.016-.375.107-.496.113-.113.243-.292.365-.438.121-.146.162-.243.243-.405.081-.162.041-.304-.02-.427-.061-.124-.546-1.316-.748-1.802-.197-.473-.397-.407-.546-.413-.142-.006-.305-.007-.467-.007-.162 0-.426.061-.649.304-.223.243-.852.832-.852 2.03 0 1.198.872 2.356.994 2.518.122.162 1.717 2.622 4.162 3.476.581.203 1.035.324 1.389.416.584.185 1.115.158 1.535.096.468-.07 1.437-.587 1.639-1.154.202-.567.202-1.054.141-1.156-.061-.102-.223-.162-.466-.286z"/></svg>
+                WhatsApp
+            </a>
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Show/hide Caesar shift input
+        document.getElementById('encodeMethod').addEventListener('change', function() {
+            document.getElementById('caesarShift').style.display = this.value === 'caesar' ? 'block' : 'none';
+        });
+
+        function encodeText() {
+            const method = document.getElementById('encodeMethod').value;
+            const text = document.getElementById('inputText').value;
+            const resultDiv = document.getElementById('result');
+            
+            if (!text) {
+                resultDiv.textContent = '⚠️ Please enter some text to encode.';
+                resultDiv.style.color = '#ff6b6b';
+                return;
+            }
+
+            let result = '';
+            switch(method) {
+                case 'base64':
+                    result = encodeBase64(text);
+                    break;
+                case 'rot13':
+                    result = rot13(text);
+                    break;
+                case 'url':
+                    result = encodeURL(text);
+                    break;
+                case 'hex':
+                    result = textToHex(text);
+                    break;
+                case 'binary':
+                    result = textToBinary(text);
+                    break;
+                case 'caesar':
+                    const shift = parseInt(document.getElementById('shiftAmount').value) || 3;
+                    result = caesarCipher(text, shift);
+                    break;
+                default:
+                    result = '❌ Unknown method';
+            }
+            
+            resultDiv.textContent = result;
+            resultDiv.style.color = '#00d4ff';
+        }
+
+        function copyResult() {
+            const text = document.getElementById('result').textContent;
+            if (text && !text.includes('Your encoded text')) {
+                copyToClipboard(text);
+            } else {
+                showToast('Nothing to copy!');
+            }
+        }
+
+        function clearFields() {
+            document.getElementById('inputText').value = '';
+            document.getElementById('result').textContent = 'Your encoded text will appear here...';
+            document.getElementById('result').style.color = '#00d4ff';
+        }
+    </script>
+</body>
+</html>

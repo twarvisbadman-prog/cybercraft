@@ -14,6 +14,8 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="encode.html">Encode</a></li>
                 <li><a href="decode.html">Decode</a></li>
+                <li><a href="encrypt.html">Encrypt</a></li>
+                <li><a href="decrypt.html">Decrypt</a></li>
                 <li><a href="about.html" class="active">About</a></li>
             </ul>
         </nav>
@@ -24,36 +26,53 @@
             <h1>About <span class="highlight">CYBERCRAFT</span></h1>
             
             <div style="margin: 1.5rem 0;">
-                <h2>🔧 What is CYBERCRAFT?</h2>
+                <h2>🛠️ 20+ Cryptographic Tools</h2>
                 <p>
-                    CYBERCRAFT is a <strong>100% static</strong> web-based encoding and decoding toolkit. 
-                    All operations run entirely in your browser using JavaScript — 
-                    <span style="color: #00d4ff; font-weight: 700;">no data is ever sent to any server</span>.
+                    CYBERCRAFT is a <strong>100% static</strong> web-based cryptography toolkit with 
+                    <strong style="color:#00d4ff;">20+ features</strong>. All operations run entirely in 
+                    your browser — <strong>no data is ever sent to any server</strong>.
                 </p>
             </div>
 
-            <div style="margin: 1.5rem 0;">
-                <h2>✨ Features</h2>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
-                        ✅ <strong>Base64</strong> — Encode & decode Base64 strings
-                    </li>
-                    <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
-                        ✅ <strong>ROT13</strong> — Classic Caesar cipher with shift 13
-                    </li>
-                    <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
-                        ✅ <strong>URL Encoding</strong> — Encode/decode URL parameters
-                    </li>
-                    <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
-                        ✅ <strong>Hex & Binary</strong> — Convert between text, hex & binary
-                    </li>
-                    <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
-                        ✅ <strong>Caesar Cipher</strong> — Shift text by any number (1-25)
-                    </li>
-                    <li style="padding: 0.5rem 0;">
-                        ✅ <strong>100% Static</strong> — No backend, no tracking, no data collection
-                    </li>
-                </ul>
+            <div style="margin: 1.5rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+                <div style="background:rgba(0,212,255,0.05); padding:1rem; border-radius:8px; border-left:3px solid #00d4ff;">
+                    <h3 style="color:#00d4ff; font-size:1.1rem;">🔒 Symmetric Encryption</h3>
+                    <ul style="list-style:none; padding:0; color:#b0b0b0;">
+                        <li>• AES-CBC</li>
+                        <li>• AES-GCM</li>
+                        <li>• Triple DES (3DES)</li>
+                    </ul>
+                </div>
+                <div style="background:rgba(0,212,255,0.05); padding:1rem; border-radius:8px; border-left:3px solid #ff6b6b;">
+                    <h3 style="color:#ff6b6b; font-size:1.1rem;">🔑 Hashing</h3>
+                    <ul style="list-style:none; padding:0; color:#b0b0b0;">
+                        <li>• SHA-256</li>
+                        <li>• SHA-512</li>
+                        <li>• SHA-1</li>
+                        <li>• MD5</li>
+                    </ul>
+                </div>
+                <div style="background:rgba(0,212,255,0.05); padding:1rem; border-radius:8px; border-left:3px solid #f9ca24;">
+                    <h3 style="color:#f9ca24; font-size:1.1rem;">📜 Classic Ciphers</h3>
+                    <ul style="list-style:none; padding:0; color:#b0b0b0;">
+                        <li>• ROT13</li>
+                        <li>• Caesar Cipher</li>
+                        <li>• Vigenère Cipher</li>
+                        <li>• XOR Cipher</li>
+                        <li>• Rail Fence Cipher</li>
+                    </ul>
+                </div>
+                <div style="background:rgba(0,212,255,0.05); padding:1rem; border-radius:8px; border-left:3px solid #00b894;">
+                    <h3 style="color:#00b894; font-size:1.1rem;">🔢 Encoding/Decoding</h3>
+                    <ul style="list-style:none; padding:0; color:#b0b0b0;">
+                        <li>• Base64</li>
+                        <li>• URL Encoding</li>
+                        <li>• Hex</li>
+                        <li>• Binary</li>
+                        <li>• HTML Entities</li>
+                        <li>• JWT Decode</li>
+                    </ul>
+                </div>
             </div>
 
             <div style="margin: 1.5rem 0; background: rgba(0,212,255,0.05); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #00d4ff;">
@@ -66,9 +85,6 @@
                         +255 740 706 007
                     </a>
                 </p>
-                <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #888;">
-                    Passionate about cybersecurity, cryptography, and building secure tools.
-                </p>
             </div>
 
             <div style="margin: 1.5rem 0; text-align: center;">
@@ -77,15 +93,14 @@
                     🔒 Your data never leaves your device. Ever.
                 </p>
                 <p style="font-size: 0.9rem; color: #888; margin-top: 0.5rem;">
-                    No cookies, no localStorage tracking, no analytics. Just pure, static tools.
+                    No cookies, no tracking, no analytics. Just pure, static cryptography tools.
                 </p>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>
-            Made with <span class="heart">❤</span> by <strong>TWARVIS</strong>
+        <p>Made with <span class="heart">❤</span> by <strong>TWARVIS</strong>
             <a href="https://wa.me/255740706007" target="_blank" class="whatsapp-link">
                 <svg viewBox="0 0 24 24"><path d="M12.031 1.969c-5.524 0-10 4.476-10 10 0 1.765.457 3.425 1.254 4.873L1.813 22.16l5.672-1.506c1.38.727 2.951 1.136 4.609 1.136 5.524 0 10-4.476 10-10s-4.476-10-10-10zm0 18.75c-1.624 0-3.128-.434-4.435-1.188l-.319-.188-3.393.9.908-3.285-.203-.332A8.407 8.407 0 0 1 4.031 11.969c0-4.412 3.588-8 8-8s8 3.588 8 8-3.588 8-8 8zm4.649-5.987c-.243-.124-1.437-.71-1.659-.791-.222-.08-.384-.124-.546.124-.162.248-.627.791-.769.953-.142.162-.284.182-.527.058-.243-.124-1.027-.378-1.956-1.204-.724-.644-1.213-1.438-1.354-1.682-.142-.244-.016-.375.107-.496.113-.113.243-.292.365-.438.121-.146.162-.243.243-.405.081-.162.041-.304-.02-.427-.061-.124-.546-1.316-.748-1.802-.197-.473-.397-.407-.546-.413-.142-.006-.305-.007-.467-.007-.162 0-.426.061-.649.304-.223.243-.852.832-.852 2.03 0 1.198.872 2.356.994 2.518.122.162 1.717 2.622 4.162 3.476.581.203 1.035.324 1.389.416.584.185 1.115.158 1.535.096.468-.07 1.437-.587 1.639-1.154.202-.567.202-1.054.141-1.156-.061-.102-.223-.162-.466-.286z"/></svg>
                 WhatsApp

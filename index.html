@@ -14,6 +14,8 @@
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="encode.html">Encode</a></li>
                 <li><a href="decode.html">Decode</a></li>
+                <li><a href="encrypt.html">Encrypt</a></li>
+                <li><a href="decrypt.html">Decrypt</a></li>
                 <li><a href="about.html">About</a></li>
             </ul>
         </nav>
@@ -23,53 +25,54 @@
         <section class="card">
             <h1>Welcome to <span class="highlight">CYBERCRAFT</span></h1>
             <p style="font-size:1.2rem; margin-bottom:1.5rem;">
-                Your all-in-one static encoding & decoding toolkit. 
-                Secure, fast, and 100% client-side — your data never leaves your browser.
+                Your all-in-one static encoding, decoding, encryption & decryption toolkit. 
+                <strong style="color:#00d4ff;">20+ features</strong> — 100% client-side.
             </p>
             
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="icon">🔐</div>
-                    <h3>Base64</h3>
-                    <p>Encode & decode Base64 strings</p>
-                </div>
-                <div class="feature-card">
-                    <div class="icon">🔄</div>
-                    <h3>ROT13</h3>
-                    <p>Caesar cipher with shift 13</p>
-                </div>
-                <div class="feature-card">
-                    <div class="icon">🌐</div>
-                    <h3>URL Encoding</h3>
-                    <p>Encode/decode URL parameters</p>
-                </div>
-                <div class="feature-card">
-                    <div class="icon">💻</div>
-                    <h3>Hex & Binary</h3>
-                    <p>Convert between text, hex & binary</p>
+                    <h3>AES Encryption</h3>
+                    <p>AES-CBC & AES-GCM</p>
                 </div>
                 <div class="feature-card">
                     <div class="icon">🔑</div>
-                    <h3>Caesar Cipher</h3>
-                    <p>Shift text by any number</p>
+                    <h3>Hashing</h3>
+                    <p>SHA-256, SHA-512, MD5</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📜</div>
+                    <h3>Classic Ciphers</h3>
+                    <p>ROT13, Caesar, Vigenère</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🔄</div>
+                    <h3>Encoding</h3>
+                    <p>Base64, URL, Hex, Binary</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🔓</div>
+                    <h3>Decryption</h3>
+                    <p>Symmetric & classic</p>
                 </div>
                 <div class="feature-card">
                     <div class="icon">⚡</div>
-                    <h3>100% Static</h3>
-                    <p>No backend, no tracking</p>
+                    <h3>20+ Tools</h3>
+                    <p>All in one place</p>
                 </div>
             </div>
 
-            <div style="text-align: center; margin-top: 1.5rem;">
-                <a href="encode.html" class="btn btn-primary">Start Encoding →</a>
-                <a href="decode.html" class="btn btn-secondary" style="margin-left: 1rem;">Start Decoding →</a>
+            <div style="text-align: center; margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+                <a href="encode.html" class="btn btn-primary">🔐 Encode</a>
+                <a href="decode.html" class="btn btn-secondary">🔓 Decode</a>
+                <a href="encrypt.html" class="btn btn-success">🔒 Encrypt</a>
+                <a href="decrypt.html" class="btn btn-outline">🔑 Decrypt</a>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>
-            Made with <span class="heart">❤</span> by <strong>TWARVIS</strong>
+        <p>Made with <span class="heart">❤</span> by <strong>TWARVIS</strong>
             <a href="https://wa.me/255740706007" target="_blank" class="whatsapp-link">
                 <svg viewBox="0 0 24 24"><path d="M12.031 1.969c-5.524 0-10 4.476-10 10 0 1.765.457 3.425 1.254 4.873L1.813 22.16l5.672-1.506c1.38.727 2.951 1.136 4.609 1.136 5.524 0 10-4.476 10-10s-4.476-10-10-10zm0 18.75c-1.624 0-3.128-.434-4.435-1.188l-.319-.188-3.393.9.908-3.285-.203-.332A8.407 8.407 0 0 1 4.031 11.969c0-4.412 3.588-8 8-8s8 3.588 8 8-3.588 8-8 8zm4.649-5.987c-.243-.124-1.437-.71-1.659-.791-.222-.08-.384-.124-.546.124-.162.248-.627.791-.769.953-.142.162-.284.182-.527.058-.243-.124-1.027-.378-1.956-1.204-.724-.644-1.213-1.438-1.354-1.682-.142-.244-.016-.375.107-.496.113-.113.243-.292.365-.438.121-.146.162-.243.243-.405.081-.162.041-.304-.02-.427-.061-.124-.546-1.316-.748-1.802-.197-.473-.397-.407-.546-.413-.142-.006-.305-.007-.467-.007-.162 0-.426.061-.649.304-.223.243-.852.832-.852 2.03 0 1.198.872 2.356.994 2.518.122.162 1.717 2.622 4.162 3.476.581.203 1.035.324 1.389.416.584.185 1.115.158 1.535.096.468-.07 1.437-.587 1.639-1.154.202-.567.202-1.054.141-1.156-.061-.102-.223-.162-.466-.286z"/></svg>
                 WhatsApp

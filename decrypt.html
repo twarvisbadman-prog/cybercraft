@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CYBERCRAFT - Decrypt</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CYBER<span>CRAFT</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="encode.html">Encode</a></li>
+                <li><a href="decode.html">Decode</a></li>
+                <li><a href="encrypt.html">Encrypt</a></li>
+                <li><a href="decrypt.html" class="active">Decrypt</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="card">
+            <h1>🔓 <span class="highlight">Decrypt</span> Your Data</h1>
+            <p>Decrypt data using 20+ methods.</p>
+
+            <div style="margin: 1.5rem 0;">
+                <label for="decryptMethod" style="font-weight: 600; color: #00d4ff;">Decryption Method:</label>
+                <select id="decryptMethod" style="width:100%; padding:0.8rem; background:rgba(0,0,0,0.4); border:1px solid rgba(0,212,255,0.2); border-radius:10px; color:#fff; font-size:1rem; margin-top:0.5rem; cursor:pointer;">
+                    <optgroup label="🔓 Symmetric Decryption">
+                        <option value="aes-cbc">AES-CBC</option>
+                        <option value="aes-gcm">AES-GCM</option>
+                        <option value="3des">Triple DES (3DES)</option>
+                    </optgroup>
+                    <optgroup label="📜 Classic Ciphers">
+                        <option value="rot13">ROT13</option>
+                        <option value="caesar">Caesar Cipher</option>
+                        <option value="vigenere">Vigenère Cipher</option>
+                        <option value="xor">XOR Cipher</option>
+                        <option value="railfence">Rail Fence Cipher</option>
+                    </optgroup>
+                    <optgroup label="🔢 Decoding">
+                        <option value="base64">Base64</option>
+                        <option value="url">URL Decode</option>
+                        <option value="hex">Hex Decode</option>
+                        <option value="binary">Binary Decode</option>
+                        <option value="html">HTML Entities</option>
+                    </optgroup>
+                    <optgroup label="🔑 Token">
+                        <option value="jwt">JWT Decode</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <div id="passwordFieldDecrypt" style="display: none; margin-bottom: 1rem;">
+                <label for="decryptPassword" style="font-weight: 600; color: #00d4ff;">Password/Key:</label>
+                <input type="password" id="decryptPassword" placeholder="Enter password/key..." style="width:100%; padding:0.8rem; background:rgba(0,0,0,0.4); border:1px solid rgba(0,212,255,0.2); border-radius:10px; color:#fff; font-size:1rem; margin-top:0.5rem;" />
+            </div>
+
+            <div id="keyFieldDecrypt" style="display: none; margin-bottom: 1rem;">
+                <label for="decryptKey" style="font-weight: 600; color: #00d4ff;">Key (for Vigenère/XOR):</label>
+                <input type="text" id="decryptKey" placeholder="Enter key..." style="width:100%; padding:0.8rem; background:rgba(0,0,0,0.4); border:1px solid rgba(0,212,255,0.2); border-radius:10px; color:#fff; font-size:1rem; margin-top:0.5rem;" />
+            </div>
+
+            <div id="shiftFieldDecrypt" style="display: none; margin-bottom: 1rem;">
+                <label for="decryptShift" style="font-weight: 600; color: #00d4ff;">Shift Amount:</label>
+                <input type="number" id="decryptShift" value="3" min="1" max="25" style="width:100px; padding:0.5rem; background:rgba(0,0,0,0.4); border:1px solid rgba(0,212,255,0.2); border-radius:10px; color:#fff; font-size:1rem; margin-top:0.5rem;" />
+            </div>
+
+            <div id="railsFieldDecrypt" style="display: none; margin-bottom: 1rem;">
+                <label for="decryptRails" style="font-weight: 600; color: #00d4ff;">Number of Rails:</label>
+                <input type="number" id="decryptRails" value="3" min="2" max="10" style="width:100px; padding:0.5rem; background:rgba(0,0,0,0.4); border:1px solid rgba(0,212,255,0.2); border-radius:10px; color:#fff; font-size:1rem; margin-top:0.5rem;" />
